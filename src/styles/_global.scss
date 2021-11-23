@@ -1,6 +1,10 @@
 $first: red;
 $sec: blue;
 
+html{
+    font-family: generalFont;
+}
+
 .container{
     color: $first;
     &__header{
@@ -8,6 +12,9 @@ $sec: blue;
     }
     &__paragraph{
         color: $sec;
+        display: block;
+        background: url("../images/house.png");
+        height: 520px;
     }
 }
 
