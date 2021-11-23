@@ -1,0 +1,37 @@
+{
+  "name": "metalamp2",
+  "version": "1.0.0",
+  "description": "number2",
+  "main": "index.js",
+  "scripts": {
+    "start": "set NODE_ENV=development&&webpack serve --open",
+    "dev": "set NODE_ENV=development&&webpack",
+    "build": "set NODE_ENV=production&&webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hericame/metalamp2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hericame/metalamp2/issues"
+  },
+  "homepage": "https://github.com/hericame/metalamp2#readme",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.5.1",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.4.5",
+    "postcss": "^8.3.11",
+    "postcss-loader": "^6.2.0",
+    "postcss-preset-env": "^7.0.1",
+    "sass": "^1.43.4",
+    "sass-loader": "^12.3.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.64.2",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.5.0"
+  }
+}

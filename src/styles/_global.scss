@@ -1,0 +1,13 @@
+$first: red;
+$sec: blue;
+
+.container{
+    color: $first;
+    &__header{
+        color: $first;
+    }
+    &__paragraph{
+        color: $sec;
+    }
+}
+
