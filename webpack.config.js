@@ -9,19 +9,28 @@ if (process.env.NODE_ENV === 'production') {
 console.log(mode + ' mode')
 
 module.exports = {
+    output: {
+        assetModuleFilename: "assets/[hash][ext][query]",
+    },
     devServer: {
         liveReload: true,
         watchFiles: ['src/', '/webpack.config.js']
     },
     mode: mode,
     plugins: [
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+            filename: '[name].[contenthash].css'
+        }),
         new HtmlWebpackPlugin({
-            template: './src/index.html'
+            template: './src/index.pug'
         })
     ],
     module: {
         rules: [
+            {
+                test: /\.html$/i,
+                loader: "html-loader",
+            },
             {
                 test: /\.(sa|sc|c)ss$/,
                 use: [
@@ -44,6 +53,19 @@ module.exports = {
                     },// postcss-loader
                     "sass-loader",
                 ]
+            },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
+            },
+            {
+                test: /\.pug$/,
+                loader: 'pug-loader',
+                exclude: /(node_modulse|bower_components)/,
             }
         ]
     },
